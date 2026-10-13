@@ -22,7 +22,7 @@ const Header = ({ isMenuOpen, onMenuToggle }) => {
                 </button>
 
                 <Link to="/" className="header__brand">
-                    <img src="/favicon.ico" alt="" className="header__logo" width="40" height="40" />
+                    <img src={`${import.meta.env.BASE_URL}favicon.ico`} alt="" className="header__logo" width="40" height="40" />
                     <span className="header__titles">
                         <span className="header__university">Atatürk Üniversitesi</span>
                         <span className="header__title">Yazılım Mühendisliği</span>

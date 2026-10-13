@@ -26,8 +26,14 @@ npm run lint
 2. `src/App.jsx` içine rotasını ekleyin.
 3. `src/data/navigation.js` içine menü kaydını ekleyin.
 
-## Yayınlama notu
+## Yayınlama
 
-Uygulama `BrowserRouter` kullanır. Sunucunun bilinmeyen tüm yolları `index.html`'e
-yönlendirmesi gerekir; aksi halde örneğin `/yandal` sayfası yenilendiğinde 404 alınır.
-Apache sunucular için bu yönlendirme `public/.htaccess` ile build çıktısına eklenir.
+Site <https://atauni-yazilim.github.io/danismanlik/> adresinde GitHub Pages ile yayınlanır.
+
+- `main` dalına her push'ta `.github/workflows/deploy.yml` siteyi derleyip yayınlar.
+  Repo ayarlarında **Settings → Pages → Source: GitHub Actions** seçili olmalıdır.
+- Site alt dizinde olduğu için `vite.config.js` içinde `base: '/danismanlik/'` tanımlıdır;
+  geliştirme sunucusu da <http://localhost:5173/danismanlik/> adresinde açılır.
+- GitHub Pages yönlendirme kuralı desteklemez. Build sırasında `index.html` aynı zamanda
+  `404.html` olarak kopyalanır; böylece `/danismanlik/yandal` gibi bir sayfa yenilendiğinde
+  de uygulama açılır.
