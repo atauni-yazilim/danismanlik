@@ -1,0 +1,67 @@
+/*=============== THEME TOKENS ===============*/
+/* Renkler Atatürk Üniversitesi logosundan alınmıştır: lacivert (#29235c) ve altın.
+   Bileşenler yalnızca bu değişkenleri kullanır.
+   Tema, index.html içindeki betik tarafından <html data-theme="..."> olarak ayarlanır. */
+
+:root {
+    color-scheme: light;
+
+    /* Marka renkleri: iki temada da aynı kalır (üst bant, alt bilgi) */
+    --brand: #29235c;
+    --brand-deep: #1e1946;
+    --brand-on: #ffffff;
+    --brand-on-muted: #c9c5e0;
+    --gold: #c19a5b;
+
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface-muted: #f1ede4;
+    --border: #e4ded2;
+    --border-strong: #cfc6b5;
+
+    --heading: #1e1946;
+    --text: #2e2b38;
+    --text-muted: #69647a;
+
+    --accent: #29235c;
+    --accent-hover: #3d3584;
+    --accent-soft: #ecebf5;
+    --accent-on: #ffffff;
+    --link: #3d3584;
+
+    --highlight: #8a6326;
+    --highlight-soft: #f8f0e1;
+    --pdf: #a8322a;
+    --pdf-soft: #fbeceb;
+
+    --shadow-sm: 0 1px 2px rgb(30 25 70 / .06);
+    --shadow-md: 0 1px 2px rgb(30 25 70 / .04), 0 6px 20px rgb(30 25 70 / .08);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #121020;
+    --surface: #1a1730;
+    --surface-muted: #221e3d;
+    --border: #2d2850;
+    --border-strong: #3d3766;
+
+    --heading: #f1eef9;
+    --text: #d2cee0;
+    --text-muted: #9b96b4;
+
+    --accent: #d4b17a;
+    --accent-hover: #e3c693;
+    --accent-soft: rgb(212 177 122 / .12);
+    --accent-on: #1a1730;
+    --link: #d4b17a;
+
+    --highlight: #e0bd84;
+    --highlight-soft: rgb(212 177 122 / .1);
+    --pdf: #f08a80;
+    --pdf-soft: rgb(240 138 128 / .12);
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
+    --shadow-md: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px rgb(0 0 0 / .3);
+}

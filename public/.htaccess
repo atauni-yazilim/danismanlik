@@ -1,0 +1,10 @@
+# React Router (BrowserRouter) için: var olmayan yolları index.html'e yönlendir.
+# Böylece /yandal gibi bir sayfa yenilendiğinde 404 yerine uygulama açılır.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>

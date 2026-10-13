@@ -1,0 +1,61 @@
+.document-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.document-card__icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+    background-color: var(--pdf-soft);
+    color: var(--pdf);
+}
+
+.document-card__icon svg {
+    width: 1.375rem;
+    height: 1.375rem;
+}
+
+.document-card__body {
+    flex: 1 1 14rem;
+    min-width: 0;
+}
+
+.document-card__label {
+    color: var(--text-muted);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.document-card__name {
+    color: var(--heading);
+    font-weight: 550;
+    line-height: 1.4;
+}
+
+.document-card__actions {
+    display: flex;
+    gap: .5rem;
+}
+
+@media (max-width: 600px) {
+    .document-card__actions {
+        width: 100%;
+    }
+
+    .document-card__actions .button {
+        flex: 1;
+    }
+}
