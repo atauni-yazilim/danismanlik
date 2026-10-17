@@ -2,6 +2,7 @@ import {
     LuBookOpen,
     LuGraduationCap,
     LuLayers,
+    LuLibrary,
     LuMousePointerClick,
     LuScale,
     LuSun,
@@ -58,6 +59,17 @@ export const navGroups = [
                 label: "ÖBS Ders Alma",
                 description: "ÖBS üzerinden ders seçimi ve danışman onayı adım adım.",
                 icon: LuMousePointerClick,
+            },
+        ],
+    },
+    {
+        title: "Kaynaklar",
+        items: [
+            {
+                path: "/kurs-onerileri",
+                label: "Kurs Önerileri",
+                description: "Dersleri desteklemek için seçilmiş, çoğu ücretsiz çevrim içi kurslar.",
+                icon: LuLibrary,
             },
         ],
     },

@@ -1,0 +1,92 @@
+.course-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: .75rem;
+}
+
+/* .prose ul içindeki madde işaretlerini kaldır */
+.prose .course-list > li {
+    padding-left: 0;
+}
+
+.prose .course-list > li::before {
+    content: none;
+}
+
+.course-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .375rem;
+    padding: 1rem 1.125rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.course-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.course-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.course-card__title {
+    color: var(--heading);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.course-card__icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    margin-top: .2rem;
+    color: var(--text-muted);
+    transition: color .15s;
+}
+
+.course-card:hover .course-card__icon {
+    color: var(--accent);
+}
+
+.course-card__provider {
+    color: var(--highlight);
+    font-size: .8125rem;
+    font-weight: 550;
+}
+
+.course-card__description {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: .9375rem;
+    line-height: 1.55;
+}
+
+.course-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .375rem;
+    margin-top: .375rem;
+}
+
+.course-tag {
+    padding: .125rem .5rem;
+    border-radius: 999px;
+    background-color: var(--surface-muted);
+    color: var(--text-muted);
+    font-size: .75rem;
+    font-weight: 550;
+}
+
+.course-tag--free {
+    background-color: var(--accent-soft);
+    color: var(--accent);
+}

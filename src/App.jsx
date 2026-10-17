@@ -8,6 +8,7 @@ import YazOkulu from "./pages/Informations/YazOkulu";
 import CiftAnadal from "./pages/Informations/CiftAnadal";
 import Yandal from "./pages/Informations/Yandal";
 import ObsDersAlma from "./pages/Informations/ObsDersAlma";
+import KursOnerileri from "./pages/Informations/KursOnerileri";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="cift-anadal" element={<CiftAnadal />} />
                 <Route path="yandal" element={<Yandal />} />
                 <Route path="obs-ders-alma" element={<ObsDersAlma />} />
+                <Route path="kurs-onerileri" element={<KursOnerileri />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

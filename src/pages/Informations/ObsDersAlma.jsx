@@ -24,6 +24,15 @@ const sections = [
         ),
     },
     {
+        id: "zorunlu-ders-secimi",
+        title: "Zorunlu Ders/Dersler Seçildikten Sonra",
+        content: (
+            <ul>
+                <li>Zorunlu ders/dersler alındıktan sonra daha önce hiç alınmamış yani ilk kez alınan derslerin alınması durumunda seçilen zorunlu dersin kaldırılabilmesi için öncelikle ilk kez alınan derslerin onaylarının kaldırılması gerekmektedir!</li>
+            </ul>
+        ),
+    },
+    {
         id: "ekranda-neler-var",
         title: "Ders Alma Ekranında Neler Var?",
         content: (
