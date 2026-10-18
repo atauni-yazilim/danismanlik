@@ -123,6 +123,7 @@ svg {
 .prose ul > li {
     position: relative;
     padding-left: 1.25rem;
+    text-align: justify;
 }
 
 .prose ul > li::before {
@@ -152,4 +153,8 @@ svg {
     border: none;
     border-top: 1px dashed var(--border-strong);
     margin: 1rem 0;
+}
+
+.prose p{
+    text-align: justify;
 }

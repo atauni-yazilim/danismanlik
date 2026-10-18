@@ -5,7 +5,8 @@ import "./InfoPage.css";
 
 /**
  * Bilgi sayfalarının ortak iskeleti.
- * sections: [{ id, title, content }] — `id` içindekiler bağlantısı ve URL'deki #bölüm için kullanılır.
+ * sections: [{ id, title, content, className? }] — `id` içindekiler bağlantısı ve URL'deki #bölüm için kullanılır;
+ *   `className` bölüme sayfaya özel stil vermek için isteğe bağlıdır.
  */
 const InfoPage = ({ category, title, lead, document, facts, intro, sections }) => {
     const showToc = sections.length > 3;
@@ -43,7 +44,7 @@ const InfoPage = ({ category, title, lead, document, facts, intro, sections }) =
 
             <div className="info-page__sections">
                 {sections.map(section => (
-                    <section className="info-section" id={section.id} key={section.id}>
+                    <section className={`info-section ${section.className ?? ""}`} id={section.id} key={section.id}>
                         <h2 className="info-section__title">
                             <a href={`#${section.id}`}>{section.title}</a>
                         </h2>

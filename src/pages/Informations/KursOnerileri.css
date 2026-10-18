@@ -31,6 +31,45 @@
     box-shadow: var(--shadow-md);
 }
 
+/* Kurs türü: kartın üstünde simge ve etiket */
+.course-card__type {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .25rem;
+    color: var(--text-muted);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.course-card__type-icon {
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.course-card__type-icon svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Video kurslar: dolu simge kutusu */
+.course-card--video .course-card__type-icon {
+    background-color: var(--accent);
+    color: var(--accent-on);
+}
+
+/* Dokümantasyonlar: çerçeveli simge kutusu */
+.course-card--dokuman .course-card__type-icon {
+    border: 1.5px solid var(--border-strong);
+    background-color: var(--surface);
+    color: var(--accent);
+}
+
 .course-card__header {
     display: flex;
     align-items: flex-start;
@@ -42,6 +81,7 @@
     color: var(--heading);
     font-weight: 600;
     line-height: 1.35;
+    text-align: left;
 }
 
 .course-card__icon {
@@ -89,4 +129,193 @@
 .course-tag--free {
     background-color: var(--accent-soft);
     color: var(--accent);
+}
+
+.course-tag--group {
+    background-color: var(--highlight-soft);
+    color: var(--highlight);
+}
+
+/* Sınıf renkleri: .year-N sınıfı rengi değişkenlere aktarır, bileşenler değişkeni kullanır */
+.year-1 { --year-color: var(--year-1); --year-soft: var(--year-1-soft); }
+.year-2 { --year-color: var(--year-2); --year-soft: var(--year-2-soft); }
+.year-3 { --year-color: var(--year-3); --year-soft: var(--year-3-soft); }
+.year-4 { --year-color: var(--year-4); --year-soft: var(--year-4-soft); }
+
+.course-tag--year {
+    background-color: var(--year-soft);
+    color: var(--year-color);
+}
+
+/* "Sınıfa göre" görünümünde bölüm ve kartlar sınıfın rengini alır */
+.course-section--year {
+    border-top: 3px solid var(--year-color);
+}
+
+.course-section--year .info-section__title::before {
+    background-color: var(--year-color);
+}
+
+.course-section--year .course-card {
+    border-top: 3px solid var(--year-color);
+}
+
+.course-section--year .course-card:hover {
+    border-color: var(--year-color);
+}
+
+.course-section--year .course-card:hover .course-card__icon {
+    color: var(--year-color);
+}
+
+/* İçindekilerdeki sınıf bağlantıları */
+.info-page__toc a[href="#1-sinif"] { --year-color: var(--year-1); --year-soft: var(--year-1-soft); }
+.info-page__toc a[href="#2-sinif"] { --year-color: var(--year-2); --year-soft: var(--year-2-soft); }
+.info-page__toc a[href="#3-sinif"] { --year-color: var(--year-3); --year-soft: var(--year-3-soft); }
+.info-page__toc a[href="#4-sinif"] { --year-color: var(--year-4); --year-soft: var(--year-4-soft); }
+
+.info-page__toc a[href$="-sinif"] {
+    background-color: var(--year-soft);
+    color: var(--year-color);
+}
+
+.info-page__toc a[href$="-sinif"]:hover {
+    background-color: var(--year-color);
+    color: var(--surface);
+}
+
+/* Arama */
+.course-search {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.course-search__field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.course-search__icon {
+    position: absolute;
+    left: 1rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.course-search__field input {
+    width: 100%;
+    padding: .8rem 2.75rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+    font: inherit;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.course-search__field input::placeholder {
+    color: var(--text-muted);
+}
+
+.course-search__field input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--highlight-soft);
+}
+
+/* Tarayıcının kendi temizle düğmesi yerine aşağıdaki düğme kullanılır */
+.course-search__field input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.course-search__clear {
+    position: absolute;
+    right: .5rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: background-color .15s, color .15s;
+}
+
+.course-search__clear:hover {
+    background-color: var(--surface-muted);
+    color: var(--heading);
+}
+
+.course-search__bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+}
+
+.course-search__status {
+    color: var(--text-muted);
+    font-size: .875rem;
+}
+
+/* Konuya / sınıfa göre görünüm seçimi */
+.view-switch {
+    display: inline-flex;
+    padding: .25rem;
+    background-color: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+.view-switch__option {
+    display: inline-flex;
+    align-items: center;
+    gap: .375rem;
+    padding: .375rem .875rem;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: .875rem;
+    font-weight: 550;
+    transition: background-color .15s, color .15s;
+}
+
+.view-switch__option:hover {
+    color: var(--heading);
+}
+
+.view-switch__option svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.view-switch__option[aria-pressed="true"] {
+    background-color: var(--accent);
+    color: var(--accent-on);
+    box-shadow: var(--shadow-sm);
+}
+
+.view-switch__count {
+    min-width: 1.25rem;
+    padding: 0 .3rem;
+    border-radius: 999px;
+    background-color: var(--border);
+    font-size: .75rem;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+.view-switch__option[aria-pressed="true"] .view-switch__count {
+    background-color: rgb(255 255 255 / .2);
+}
+
+:root[data-theme="dark"] .view-switch__option[aria-pressed="true"] .view-switch__count {
+    background-color: rgb(0 0 0 / .15);
+}
+
+.course-search__status:empty {
+    display: none;
 }

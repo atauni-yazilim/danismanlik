@@ -16,7 +16,7 @@ const sections = [
         title: "Dersler ve Süreleri",
         content: (
             <ul>
-                <li>Bir ders saatinin süresi elli dakikadır.</li>
+                <li>Bir ders saatinin süresi 50 dakikadır.</li>
             </ul>
         ),
     },
@@ -29,7 +29,7 @@ const sections = [
                 <li>Yarıyıllık programlarda son sınıfın her bir yarıyılı, yıllık programlarda ise son sınıf için mezuniyetine tek dersi kalan öğrencilere, istemeleri halinde AKTS miktarına ilaveten bir ders verilir.</li>
                 <li>AGNO’sunu yükseltmek isteyen öğrenciler, daha önce almış olduğu derslerden FF notu almış olduğu ders/dersler dışında da azami AKTS sınırını aşmamak kaydıyla, istediği kadar ders alabilir. AGNO hesabında tekrarlanan dersler için öğrencinin aldığı en son not geçerlidir.</li>
                 <li>Öğrenciler, kayıt yenileme bitiş tarihini takip eden ilk iki hafta içerisinde almış oldukları dersi/dersleri danışman nezaretinde bırakabilir. Bırakılan dersin/derslerin yerine, geçen sürenin devamsızlıktan sayılması şartıyla yeni ders/dersler alınabilir.</li>
-                <li>İlk iki hafta içinde bırakılmayan seçmeli dersler zorunlu ders gibi işlem görür. Ancak, öğrencinin başarısız olduğu seçmeli dersin ilgili yarıyılda/yılda yeniden açılmaması halinde başka bir ders seçilir.</li>
+                <li><strong>İlk iki hafta içinde bırakılmayan seçmeli dersler zorunlu ders gibi işlem görür</strong>. Ancak, öğrencinin başarısız olduğu seçmeli dersin ilgili yarıyılda/yılda yeniden açılmaması halinde başka bir ders seçilir.</li>
             </ul>
         ),
     },
@@ -46,6 +46,7 @@ const sections = [
         content: (
             <ul>
                 <li>Teorik dersler, laboratuvar ve benzeri çalışmaların en az %80’ine devam etmek zorunludur.</li>
+                <li>FF harf notuyla başarısız olunan derslerin teorik saatlerine tekrar devam zorunluluğu bulunmamaktadır. Fakat daha önce devam edilmiş olsa bile eğer varsa bu derslerin laboratuvar, uygulama ve benzeri çalışmalarının %80'ine devam etmek zorunludur.</li>
             </ul>
         ),
     },

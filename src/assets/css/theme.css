@@ -34,6 +34,16 @@
     --pdf: #a8322a;
     --pdf-soft: #fbeceb;
 
+    /* Kurs önerilerinde sınıf renkleri (1–4): logodaki lacivert ve altınla uyumlu, yumuşak tonlar */
+    --year-1: #2f6e4f;
+    --year-1-soft: #e5f1ea;
+    --year-2: #2b5f8a;
+    --year-2-soft: #e4eef6;
+    --year-3: #a14a2a;
+    --year-3-soft: #f8e9e2;
+    --year-4: #74407a;
+    --year-4-soft: #f3e8f4;
+
     --shadow-sm: 0 1px 2px rgb(30 25 70 / .06);
     --shadow-md: 0 1px 2px rgb(30 25 70 / .04), 0 6px 20px rgb(30 25 70 / .08);
 }
@@ -61,6 +71,15 @@
     --highlight-soft: rgb(212 177 122 / .1);
     --pdf: #f08a80;
     --pdf-soft: rgb(240 138 128 / .12);
+
+    --year-1: #86c9a2;
+    --year-1-soft: rgb(134 201 162 / .13);
+    --year-2: #8dbbe3;
+    --year-2-soft: rgb(141 187 227 / .13);
+    --year-3: #eda07f;
+    --year-3-soft: rgb(237 160 127 / .13);
+    --year-4: #d3a2d8;
+    --year-4-soft: rgb(211 162 216 / .13);
 
     --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
     --shadow-md: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px rgb(0 0 0 / .3);
