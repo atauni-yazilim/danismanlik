@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { LuBookOpenText, LuExternalLink, LuMonitorPlay, LuSearch, LuX } from "react-icons/lu";
 import Callout from "../../components/Callout/Callout";
@@ -96,7 +97,7 @@ const KursOnerileri = () => {
     // Arama (?q=), görünüm (?gorunum=sinif) ve tür (?tur=video) URL'de tutulur;
     // böylece paylaşılabilir ve sayfa yenilenince kaybolmaz.
     const [searchParams, setSearchParams] = useSearchParams();
-    const query = searchParams.get("q") ?? "";
+    const urlQuery = searchParams.get("q") ?? "";
     const view = searchParams.get("gorunum") === "sinif" ? "sinif" : "konu";
     const typeParam = searchParams.get("tur");
     const type = typeParam in courseTypes ? typeParam : "";
@@ -109,6 +110,24 @@ const KursOnerileri = () => {
             return next;
         }, { replace: true });
     };
+
+    // Yazılan metin yerel state'te tutulur; URL her tuşta değil, yazmaya ara verilince güncellenir.
+    // Her URL değişikliği bir router geçişi olup tüm sayfayı (menü, üst bant…) yeniden çizdiği
+    // için arama kutusunu doğrudan URL'ye bağlamak yazarken takılmaya yol açıyordu.
+    const [query, setQuery] = useState(urlQuery);
+
+    useEffect(() => {
+        if (query === urlQuery) return;
+        const timer = setTimeout(() => {
+            setSearchParams(previous => {
+                const next = new URLSearchParams(previous);
+                if (query) next.set("q", query);
+                else next.delete("q");
+                return next;
+            }, { replace: true });
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [query, urlQuery, setSearchParams]);
 
     // Filtre düğmelerindeki sayılar aramaya göre, gösterilen kurslar ise ayrıca seçili türe göre süzülür.
     const searchMatches = searchCourses(query);
@@ -160,13 +179,13 @@ const KursOnerileri = () => {
                                 type="search"
                                 aria-label="Kurslarda ara"
                                 value={query}
-                                onChange={event => setParam("q", event.target.value)}
+                                onChange={event => setQuery(event.target.value)}
                                 placeholder="Kurs adı, konu veya anahtar kelime ara (ör. python, veritabanı, react)"
                                 autoComplete="off"
                                 spellCheck="false"
                             />
                             {isSearching && (
-                                <button type="button" className="course-search__clear" onClick={() => setParam("q", "")} aria-label="Aramayı temizle">
+                                <button type="button" className="course-search__clear" onClick={() => setQuery("")} aria-label="Aramayı temizle">
                                     <LuX aria-hidden="true" />
                                 </button>
                             )}
